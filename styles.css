@@ -1,13 +1,16 @@
 * {
   font-family: 'Baloo Tammudu', cursive;
-  background-color: rgb(123, 105, 240);
+  background-color: #C8FFFC;
   text-align: center;
 }
 
 h1 {
+  background: radial-gradient(circle, #FFFFFF,#C8FFFC);
   font-size: 3.3rem;
   padding: 2rem;
-  border: dotted whitesmoke;
+  margin: 10px auto;
+  width: 40%;
+  border-radius: 50%
 }
 
 .sentence {
