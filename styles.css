@@ -5,5 +5,11 @@
 }
 
 h1 {
-  padding-bottom: 3rem;
+  font-size: 3.3rem;
+  padding: 2rem;
+  border: dotted whitesmoke;
+}
+
+.sentence {
+  font-size: 2.2rem;
 }

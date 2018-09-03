@@ -14,3 +14,14 @@ function grabSingleChar(object) {
   $character.textContent = object.char
   return $character
 }
+
+function grabAllChar(array) {
+  $sentence = document.createElement('div')
+  $sentence.classList.add('sentence')
+  for (var j = 0; j < array.length; j++) {
+    $sentence.appendChild(grabSingleChar(array[j]))
+  }
+  return $sentence
+}
+
+document.body.appendChild(grabAllChar(phrase))
