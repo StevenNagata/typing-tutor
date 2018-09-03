@@ -8,3 +8,9 @@ for (var i = 0; i < string.length; i++) {
   obj[char] = string[i]
   phrase.push(obj)
 }
+
+function grabSingleChar(object) {
+  $character = document.createElement('span')
+  $character.textContent = object.char
+  return $character
+}
