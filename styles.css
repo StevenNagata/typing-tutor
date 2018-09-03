@@ -1,4 +1,9 @@
 * {
   font-family: 'Baloo Tammudu', cursive;
   background-color: rgb(123, 105, 240);
+  text-align: center;
+}
+
+h1 {
+  padding-bottom: 3rem;
 }
