@@ -25,3 +25,11 @@ function grabAllChar(array) {
 }
 
 document.body.appendChild(grabAllChar(phrase))
+
+var characterObj = {}
+
+for (var k = 0; k < string.length; k++) {
+  let property = string[k]
+  characterObj[property] = ''
+}
+console.log(characterObj)
