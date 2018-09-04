@@ -47,6 +47,14 @@ function score (appState) {
   return percentage
 }
 
+function displayScore () {
+  let accuracy = score(appState)
+  var $displayScore = document.createElement('h2')
+  $displayScore.classList.add('score')
+  $displayScore.textContent = 'GAME OVER! You had ' + Math.round((accuracy * 100),1) + '% accuracy'
+  return $displayScore
+}
+
 window.addEventListener('keydown', function (e) {
   let currentCharIndex = appState.phrase[appState.currentCharacter]
   if (e.key !== currentCharIndex.char) {
@@ -59,7 +67,6 @@ window.addEventListener('keydown', function (e) {
   document.body.textContent = ''
   document.body.appendChild($header)
   document.body.appendChild(grabAllChar(appState.phrase))
-  console.log(score(appState))
 })
 
 document.body.appendChild(grabAllChar(appState.phrase))
