@@ -11,16 +11,21 @@ for (var i = 0; i < string.length; i++) {
   let obj = {}
   var char = 'char'
   var failure = 'failure'
+  var correct = 'correct'
+  obj[correct] = true
   obj[char] = string[i]
   obj[failure] = 0
   appState.phrase.push(obj)
 }
-
+console.log(appState)
 function grabSingleChar(object, index) {
   $character = document.createElement('a')
   $character.textContent = object[char]
   if (index === appState.currentCharacter) {
     $character.classList.add('currentCharacter')
+  }
+  if (index === appState.currentCharacter && appState.phrase[appState.currentCharacter][correct] === false) {
+    $character.classList.add('failure')
   }
   return $character
 }
@@ -37,7 +42,9 @@ function grabAllChar(array) {
 window.addEventListener('keydown', function (e){
   if(e.key  !== appState.phrase[appState.currentCharacter][char]) {
     appState.phrase[appState.currentCharacter][failure] += 1
+    appState.phrase[appState.currentCharacter][correct] = false
     console.log(appState.phrase[appState.currentCharacter][failure])
+    console.log(appState.phrase[appState.currentCharacter][correct])
   }
   document.body.textContent = ''
   document.body.appendChild($header)
