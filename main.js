@@ -17,7 +17,7 @@ for (var i = 0; i < string.length; i++) {
   obj[failure] = 0
   appState.phrase.push(obj)
 }
-console.log(appState)
+
 function grabSingleChar(object, index) {
   $character = document.createElement('a')
   $character.textContent = object[char]
@@ -43,8 +43,6 @@ window.addEventListener('keydown', function (e){
   if(e.key  !== appState.phrase[appState.currentCharacter][char]) {
     appState.phrase[appState.currentCharacter][failure] += 1
     appState.phrase[appState.currentCharacter][correct] = false
-    console.log(appState.phrase[appState.currentCharacter][failure])
-    console.log(appState.phrase[appState.currentCharacter][correct])
   }
   else {
     appState.currentCharacter += 1
