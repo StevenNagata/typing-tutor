@@ -8,23 +8,22 @@ $header.textContent = 'Typing Tutor'
 var string = 'grumpy wizards make toxic brew for the evil queen and jack'
 
 for (var i = 0; i < string.length; i++) {
-  let obj = {}
-  var char = 'char'
-  var failure = 'failure'
-  var correct = 'correct'
-  obj[correct] = true
-  obj[char] = string[i]
-  obj[failure] = 0
+  var obj = {
+    correct: true,
+    char: string[i],
+    failure: 0,
+  }
   appState.phrase.push(obj)
 }
 
 function grabSingleChar(object, index) {
+  let currentCharIndex = appState.phrase[appState.currentCharacter]
   $character = document.createElement('a')
-  $character.textContent = object[char]
+  $character.textContent = object['char']
   if (index === appState.currentCharacter) {
     $character.classList.add('currentCharacter')
   }
-  if (index === appState.currentCharacter && appState.phrase[appState.currentCharacter][correct] === false) {
+  if (index === appState.currentCharacter && currentCharIndex['correct'] === false) {
     $character.classList.add('failure')
   }
   return $character
@@ -39,10 +38,11 @@ function grabAllChar(array) {
   return $sentence
 }
 
-window.addEventListener('keydown', function (e){
-  if(e.key  !== appState.phrase[appState.currentCharacter][char]) {
-    appState.phrase[appState.currentCharacter][failure] += 1
-    appState.phrase[appState.currentCharacter][correct] = false
+window.addEventListener('keydown', function (e) {
+  let currentCharIndex = appState.phrase[appState.currentCharacter]
+  if (e.key !== currentCharIndex['char']) {
+    currentCharIndex['failure'] += 1
+    currentCharIndex['correct'] = false
   }
   else {
     appState.currentCharacter += 1
