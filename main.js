@@ -38,7 +38,7 @@ function grabAllChar(sentenceArray) {
   return $sentence
 }
 
-function score (appState) {
+function score(appState) {
   var total = percentag = 0
   for (var l = 0; l < appState.phrase.length; l++) {
     total += appState.phrase[l].failure + 1
@@ -47,16 +47,17 @@ function score (appState) {
   return percentage
 }
 
-function displayScore () {
+function displayScore() {
   let accuracy = score(appState)
   var $displayScore = document.createElement('h2')
   $displayScore.classList.add('score')
-  $displayScore.textContent = 'GAME OVER! You had ' + Math.round((accuracy * 100),1) + '% accuracy'
+  $displayScore.textContent = 'GAME OVER! You had ' + Math.round((accuracy * 100), 1) + '% accuracy'
   return $displayScore
 }
 
 window.addEventListener('keydown', function (e) {
   let currentCharIndex = appState.phrase[appState.currentCharacter]
+  let finalScore = displayScore()
   if (e.key !== currentCharIndex.char) {
     currentCharIndex.failure += 1
     currentCharIndex.correct = false
@@ -67,6 +68,9 @@ window.addEventListener('keydown', function (e) {
   document.body.textContent = ''
   document.body.appendChild($header)
   document.body.appendChild(grabAllChar(appState.phrase))
+  if (appState.currentCharacter >= appState.phrase.length) {
+    document.body.appendChild(finalScore)
+  }
 })
 
 document.body.appendChild(grabAllChar(appState.phrase))
