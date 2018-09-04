@@ -46,6 +46,9 @@ window.addEventListener('keydown', function (e){
     console.log(appState.phrase[appState.currentCharacter][failure])
     console.log(appState.phrase[appState.currentCharacter][correct])
   }
+  else {
+    appState.currentCharacter += 1
+  }
   document.body.textContent = ''
   document.body.appendChild($header)
   document.body.appendChild(grabAllChar(appState.phrase))
