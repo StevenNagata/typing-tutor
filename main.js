@@ -33,5 +33,5 @@ for (var k = 0; k < string.length; k++) {
   characterObj[property] = ''
 }
 
-characterObj.currentCharacter= ''
+characterObj.currentCharacter = ''
 console.log(characterObj)

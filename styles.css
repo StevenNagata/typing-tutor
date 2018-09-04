@@ -16,3 +16,7 @@ h1 {
 .sentence {
   font-size: 2.2rem;
 }
+
+.currentCharacter {
+  color: green;
+}
