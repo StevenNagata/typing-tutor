@@ -22,3 +22,9 @@ h1 {
   border-right: solid #148A4A;
   border-width: 2px;
 }
+
+.failure {
+  color: red;
+  border-right: solid red;
+  border-width: 2px;
+}
