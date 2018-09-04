@@ -3,6 +3,8 @@ var appState = {
   currentCharacter: 0,
 }
 
+var $header = document.createElement('h1')
+$header.textContent = 'Typing Tutor'
 var string = 'grumpy wizards make toxic brew for the evil queen and jack'
 
 for (var i = 0; i < string.length; i++) {
@@ -32,5 +34,11 @@ function grabAllChar(array) {
   return $sentence
 }
 
-console.log(appState)
+window.addEventListener('keydown', function (e){
+  console.log(e.key)
+  document.body.textContent = ''
+  document.body.appendChild($header)
+  document.body.appendChild(grabAllChar(appState.phrase))
+})
+
 document.body.appendChild(grabAllChar(appState.phrase))
