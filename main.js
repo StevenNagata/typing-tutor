@@ -35,7 +35,10 @@ function grabAllChar(array) {
 }
 
 window.addEventListener('keydown', function (e){
-  console.log(e.key)
+  if(e.key  !== appState.phrase[appState.currentCharacter][char]) {
+    appState.phrase[appState.currentCharacter][failure] += 1
+    console.log(appState.phrase[appState.currentCharacter][failure])
+  }
   document.body.textContent = ''
   document.body.appendChild($header)
   document.body.appendChild(grabAllChar(appState.phrase))
