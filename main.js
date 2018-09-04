@@ -39,11 +39,11 @@ function grabAllChar(sentenceArray) {
 }
 
 function score(appState) {
-  var total = percentag = 0
+  var total = 0
   for (var l = 0; l < appState.phrase.length; l++) {
     total += appState.phrase[l].failure + 1
   }
-  percentage = appState.phrase.length / total
+  var percentage = appState.phrase.length / total
   return percentage
 }
 
@@ -57,7 +57,6 @@ function displayScore() {
 
 window.addEventListener('keydown', function (e) {
   let currentCharIndex = appState.phrase[appState.currentCharacter]
-  let finalScore = displayScore()
   if (e.key !== currentCharIndex.char) {
     currentCharIndex.failure += 1
     currentCharIndex.correct = false
@@ -69,6 +68,7 @@ window.addEventListener('keydown', function (e) {
   document.body.appendChild($header)
   document.body.appendChild(grabAllChar(appState.phrase))
   if (appState.currentCharacter >= appState.phrase.length) {
+    let finalScore = displayScore()
     document.body.appendChild(finalScore)
   }
 })
