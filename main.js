@@ -8,7 +8,9 @@ var string = 'grumpy wizards make toxic brew for the evil queen and jack'
 for (var i = 0; i < string.length; i++) {
   let obj = {}
   var char = 'char'
+  var failure = 'failure'
   obj[char] = string[i]
+  obj[failure] = 0
   appState.phrase.push(obj)
 }
 
