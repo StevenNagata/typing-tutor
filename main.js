@@ -32,4 +32,6 @@ for (var k = 0; k < string.length; k++) {
   let property = string[k]
   characterObj[property] = ''
 }
+
+characterObj.currentCharacter= ''
 console.log(characterObj)
