@@ -1,5 +1,5 @@
 * {
-  font-family: 'Baloo Tammudu', cursive;
+  font-family: 'Permanent Marker', cursive;
   background-color: #C8FFFC;
   text-align: center;
 }
@@ -18,5 +18,7 @@ h1 {
 }
 
 .currentCharacter {
-  color: green;
+  color: #148A4A;
+  border-right: solid #148A4A;
+  border-width: 2px;
 }
